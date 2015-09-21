@@ -1,0 +1,6 @@
+Qual seu nome?
+
+<%= form_tag play_path, method: :get do %>
+  <%= text_field_tag :name %>
+  <%= submit_tag 'Iniciar', name: nil %>
+<% end %>

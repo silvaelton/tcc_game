@@ -1,0 +1,8 @@
+<%= @group %>
+
+<%= form_tag play_path, method: :get do %>
+  <%= text_field_tag :name %>
+  <%= hidden_field_tag :group, @group %>
+
+  <%= submit_tag "Inciar", name: nil %>
+<% end %>

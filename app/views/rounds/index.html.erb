@@ -1,0 +1,33 @@
+<div class='row'>
+  <div class='col-md-4'>
+    <h1> <b>RODADA:</b>  <%= @round.round %> </h1>
+  </div>
+  <div class='col-md-4' style="text-align:center;">
+    <h1><b><%= @round.player %></b></h1>
+  </div>
+  <div class='col-md-4' style="text-align:center;">
+    <h1><b><%= @round.step %></b></h1>
+  </div>
+</div>
+
+INDEX:    <%= @round.index %>
+GRUPO:    <%= @round.group %>
+STEP:     <%= @round.step %>
+
+<%= hidden_field_tag :player, @round.player, id: 'player' %>
+
+<div class='row'>
+  <div class='col-md-4 col-md-offset-3' style="text-align:center;">
+    <%= link_to "human",  play_path(choice: "human",  index: @round.next_index, name: @round.name, group: @round.group) %>
+    <%= link_to "animal", play_path(choice: "animal", index: @round.next_index, name: @round.name, group: @round.group) %>
+    <%= link_to "object", play_path(choice: "object", index: @round.next_index, name: @round.name, group: @round.group) %>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    if($("#player").val() == "Vez do Computador"){
+      alert('ok')
+    }
+  });
+</script>
